@@ -8,8 +8,11 @@
     font-weight: 400;
     font-family: 'Lato','Source Sans Pro','Segoe UI', Tahoma, Verdana, sans-serif;
     list-style: none;
+    scroll-behavior: smooth;
 }
-
+body {
+    overflow-x: hidden;
+}
 a {
     color: unset;
 }
@@ -36,8 +39,13 @@ p {
 }
 
 #nav-logo {
-    height: 80%;
+    height: 100%;
     margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+#nav-logo > img {
+    height: 80%;
 }
 
 .nav-list {
@@ -95,20 +103,26 @@ header > h1::after {
 }
 
 .chevron-down {
-    width: 30px;
-    margin-bottom: -100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    margin: 40px 0;
+    width: 50px;
+    height: max-content;
+    z-index: 3;
     animation: chevron-down 2s infinite;
 }
 
 @keyframes chevron-down {
     0% {
-        margin-bottom: -100px;
+        bottom: 0;
     }
     50% {
-        margin-bottom: -90px;
+        bottom: 15px;
     }
     100% {
-        margin-bottom: -100px;
+        bottom: 1px;
     }
 }
 @media screen and (max-width: 700px) {
@@ -124,14 +138,15 @@ header > h1::after {
 }
 
 #cloud {
+    overflow-x: hidden;
     position: absolute;
     width: 100%;
     height: 800px;
     margin-top: -300px;
-    background: url(./img/purple-cloud.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: -50px 0;
+    z-index: 2;
+    background: no-repeat url(./img/purple-cloud.svg);
+    background-position: -120px 0;
+    background-size: auto 800px;
 }
 
 header small {
@@ -155,22 +170,35 @@ header small:hover span {
 }
 
 /* body */
-#mineria-container {
+.container {
     display: flex;
+    min-height: 100vh;
+    max-height: max-content;
+    align-items: center;
+    justify-content: space-around;
+}
+.right-container {
+    justify-content: right;
+}
+.dark-container {
+    background-color: #241921;
+}
+.container > img {
+    height: 80vh;
+}
+
+#potion-container {
+    justify-content: left;
     background: url(./img/background.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    height: max-content;
 }
 
-#mineria-container article {
-    margin-top: 550px;
-    margin-left: 50px;
-    margin-bottom: 100px;
-    color: #f1f1f1;
-    width:40%;
+#potion-container article {
+    margin-top: 300px;
+    padding: 200px 0;
 }
 
 .title {
@@ -179,36 +207,95 @@ header small:hover span {
 }
 
 .title img {
-    width: 70px;
+    width: 110px;
 }
 .title h1 {
     margin-left: 30px;
 }
-
-.center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.title h1 img {
+    width: 55px;
+    border: 3px solid #241921;
+    border-radius: 50%;
+    vertical-align: middle;
+    box-shadow: 0px 3px 10px 1px #00000044;
 }
-#mineria-container article a {
+.dark-container .title h1 img {
+    border-color: #f1f1f1;
+}
+
+.container article a {
+    display: block;
+    margin: auto;
+    width: min-content;
+    white-space: nowrap;
+    text-align: center;
     margin-top: 20px;
     padding: 10px;
     font-size: 28px;
-    color: #f1f1f1;
-    border: 4px solid #f1f1f1;
+    border: 4px solid #241921;
+    color: #241921;
     border-radius: 10px;
     transition: 500ms;
 }
 
-#mineria-container article a:hover {
+.container article a:hover {
+    background-color: #241921;
+    color: #f1f1f1;
+}
+.dark-container article a {
+    color: #f1f1f1;
+    border: 4px solid #f1f1f1;
+}
+.dark-container article a:hover {
     background-color: #f1f1f1;
     color: #241921;
 }
 
+#screenshots {
+    margin: 0;
+    height: 100vh;
+}
+.container article {
+    box-sizing: border-box;
+    margin: auto 50px;
+    padding: 30px 0;
+    width:40%;
+}
+.dark-container article {
+    color: #f1f1f1;
+}
+#minetest-link {
+    text-decoration: underline;
+    border: none;
+    font-size: 16px;
+    margin-top: 0;
+}
+#minetest-link:hover {
+    color: #f1f1f1;
+    background: none;
+}
 @media screen and (max-width: 635px) {
-    #mineria-container article {
+    .title > img {
+        width: 95px;
+    }
+    .title h1 {
+        font-size: 54px;
+        margin-left: 10px;
+    }
+    .title h1 img {
+        width: 40px;
+    }
+    #potion-container {
+        background: scroll #241921;
+    }
+    .container article {
         width: 100%;
+        margin: 0;
         margin-left: 5px;
+        overflow: hidden;
+    }
+    .container > img {
+        display: none;
     }
 }
 /* footer */
@@ -216,7 +303,9 @@ header small:hover span {
 footer {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    /* margin-top: 40px; */
+    padding: 30px 0;
+    background-color: #f1f1f1;
 }
 
 footer div {

@@ -10,10 +10,11 @@
 </head>
 <body>
     <nav class="nav-bar">
-        <img id="nav-logo" src="./img/mineria-lab_logo.svg" alt="logo de Mineria">
+        <a href="index.html" id="nav-logo">
+            <img src="./img/mineria-lab_logo.svg" alt="logo de Mineria">
+        </a>
         <ul class="nav-list">
-            <li>wiki</li>
-            <li>projects</li>
+            <li><a href="projects.html">projects</a></li>
         </ul>
     </nav>
     <header>
@@ -32,27 +33,59 @@
                 <p>Mrlulu51</p>
             </a>
         </div>
-        <img class="chevron-down" src="./img/chevron.svg">
+        <a href="#mineria-mod" class="chevron-down">
+            <img src="./img/chevron.svg">
+        </a>
+        
         <small>
             <span><a href="https://www.freepik.com/free-vector/three-wooden-bookshelves-with-various-books-flat-set-web-design_12699863.htm#query=shelf&position=0&from_view=search&track=sph">Background by pch.vector</a> on Freepik</span>
             &copy;
         </small>
     </header>
     <div id="cloud"></div>
-    <div id="mineria-container">
-        <article>
+    <!-- <img id="cloud" src="./img/purple-cloud.svg"> -->
+    <div id="potion-container" class="container dark-container">
+        <article id="mineria-mod">
             <div class="title">
                 <img src="./img/mineria.png" alt="Mineria logo">
-                <h1>Mineria Mod</h1>
+                <h1><b>Mineria Mod</b></h1>
             </div><br/>
-            <p>Mineria mod is our biggest common project. It's a Minecraft mod which contains mostly a lot of new ores and medicinal plants.</p>
+            <p><b>Mineria mod</b> is our biggest common project. It's a <b>Minecraft mod</b> which contains mostly a lot of new <b>ores</b> and medicinal <b>plants.</b></p>
             <p>It is available now on cursforge and it has already been downloaded <span id="download-count">more than 10k</span> times.</p>
             <div class="center">
                 <a href="https://www.curseforge.com/minecraft/mc-mods/mineria" target="_blank">See more</a>
             </div>
         </article>
     </div>
-    <div style="height: 200px;"></div>
+    <div class="container right-container">
+        <img id="screenshots" src="./img/screens.png">
+        <article id="screenshot-viewer">
+            <div class="title">
+                <img src="./img/screenshot_viewer.png" alt="Screenshot Viewer logo">
+                <h1>Screenshot Viewer <img src="./img/LGatodu47.png" alt="LGatodu47"></h1>
+            </div><br/>
+            <p><b>Screenshot viewer</b> is a LGato's <b>Minecraft mod</b> that allows you to see the screenshots that you have taken while you were gaming!</p>
+            <p>It comes with a great GUI and an in-game configuration. </p>
+            <p>It currently has over <span id="sv-download-count">15k</span> downnloads.</p>
+            <div class="center">
+                <a href="https://www.curseforge.com/minecraft/mc-mods/screenshot-viewer" target="_blank">See more</a>
+            </div>
+        </article>
+    </div>
+    <div class="container dark-container">
+        <article id="potions-and-magic">
+            <div class="title">
+                <img src="./img/potion_and_magic.png" alt="Potions and Magic logo">
+                <h1>Potions & Magic <img src="./img/mathys_craft.png" alt="Mathys Craft"></h1>
+            </div><br/>
+            <p>Potions & Magic is a Mathys_Craft's <b>Minetest</b> <b>mod</b>. It add sevral <b>potions</b> and items or blocks to craft them. A hud also indicates when effects are applied to the player.</p>
+            <div class="center">
+                <a href="https://content.minetest.net/packages/mathys/potions_and_magic/" target="_blank">See more</a>
+                <a href="https://www.minetest.net/" target="_blank" id="minetest-link">Learn more about Minetest...</a>
+            </div>  
+        </article>
+        <img src="./img/Minetest_logo.png" alt="logo de Minetest">
+    </div>
     <footer>
         <div>
             <img class="footer-logo" src="./img/mineria-lab_logo.svg" alt="Mineria lab logo">
